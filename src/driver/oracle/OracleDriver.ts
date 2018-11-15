@@ -662,6 +662,8 @@ export class OracleDriver implements Driver {
        
         // build connection options for the driver
         const connectionOptions = Object.assign({}, {
+            //adding default poolAlias
+            poolAlias:options.name,
             user: credentials.username,
             password: credentials.password,
             connectString: credentials.connectString ? credentials.connectString : credentials.host + ":" + credentials.port + "/" + credentials.sid,
